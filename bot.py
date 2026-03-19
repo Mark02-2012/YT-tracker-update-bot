@@ -29,8 +29,8 @@ def check_updates():
 
             # Se la versione è cambiata, invia il messaggio
             if new_version != old_version:
-                msg = f"🚀 Nuova versione di {app_name} disponibile!\n📦 Versione: {new_version}"
-                requests.get(f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={CHAT_ID}&text={msg}")
+            msg = f"🚀 Nuova versione di {app_name} disponibile!\n📦 Versione: {new_version}\n🔗 Link: https://apps.apple.com/it/app/id{app_id}"
+
                 
                 # Salva la nuova versione
                 with open(file_name, "w") as f:
