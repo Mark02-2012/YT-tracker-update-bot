@@ -1,4 +1,5 @@
 import requests
+import time # Aggiungi questo in alto insieme a import requests
 import os
 
 # Configurazione App (Nome: ID App Store)
@@ -12,9 +13,10 @@ CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 def check_updates():
     for app_name, app_id in APPS.items():
-        # Interroga l'App Store italiano
-        url = f"https://itunes.apple.com/lookup?id={app_id}&country=it"
+        # Interroga l'App Store italiano con trucco anti-cache
+        url = f"https://itunes.apple.com/lookup?id={app_id}&country=it&t={int(time.time())}"
         response = requests.get(url).json()
+
         
         if response["resultCount"] > 0:
             new_version = response["results"][0]["version"]
