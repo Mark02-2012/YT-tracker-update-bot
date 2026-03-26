@@ -1,7 +1,7 @@
 name: Check App Updates
 on:
   schedule:
-    - cron: '*/30 * * * *' # Controlla ogni 30 minuti
+    - cron: '*/15 * * * *' # Controlla ogni 15 minuti
   workflow_dispatch: # Permette di avviarlo manualmente per test
 
 jobs:
