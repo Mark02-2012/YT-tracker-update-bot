@@ -11,7 +11,7 @@ jobs:
       contents: write # Permette a GitHub di salvare i file delle versioni
     steps:
       - name: Checkout codice
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6.0.2
 
       - name: Setup Python
         uses: actions/setup-python@v5
